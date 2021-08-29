@@ -5,12 +5,10 @@ from functools import wraps
 from jose import jwt
 from urllib.request import urlopen
 
-# AUTH0_DOMAIN = os.getenv('AUTH0_DOMAIN')
-# ALGORITHMS = [os.getenv('ALGORITHMS')]
-# API_AUDIENCE = os.getenv('API_AUDIENCE')
-AUTH0_DOMAIN = 'dev-ud-py.us.auth0.com'
-ALGORITHMS = ['RS256']
-API_AUDIENCE = 'model_agency'
+AUTH0_DOMAIN = os.getenv('AUTH0_DOMAIN', 'dev-ud-py.us.auth0.com')
+algo = os.getenv('ALGORITHMS', 'RS256')
+ALGORITHMS = [algo]
+API_AUDIENCE = os.getenv('API_AUDIENCE', 'model_agency')
 
 # AuthError Exception
 '''
